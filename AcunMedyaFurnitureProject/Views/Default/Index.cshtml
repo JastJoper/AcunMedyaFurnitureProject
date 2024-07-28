@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+
+<!-- Start Hero Section -->
+@await Component.InvokeAsync("_DefaultFeatureComponent")
+<!-- End Hero Section -->
+<!-- Start Product Section -->
+@await Component.InvokeAsync("_DefaultProductComponent")
+<!-- End Product Section -->
+<!-- Start Why Choose Us Section -->
+@await Component.InvokeAsync("_DefaultChooseComponent")
+<!-- End Why Choose Us Section -->
+<!-- Start We Help Section -->
+@await Component.InvokeAsync("_DefaultHelpComponent")
+<!-- End We Help Section -->
+<!-- Start Popular Product -->
+@await Component.InvokeAsync("_DefaultPopularComponent")
+<!-- End Popular Product -->
+<!-- Start Testimonial Slider -->
+@await Component.InvokeAsync("_DefaultTestimonialComponent")
+<!-- End Testimonial Slider -->
+

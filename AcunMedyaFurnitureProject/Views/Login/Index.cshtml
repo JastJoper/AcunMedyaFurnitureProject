@@ -1,0 +1,117 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Giriş Yap";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body {
+        background: url('https://source.unsplash.com/1600x900/?furniture,interior') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .login-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .login-header h3 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+
+    .form-control {
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-custom {
+        width: 100%;
+        background-color: #343a40;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-custom:hover {
+            background-color: #23272b;
+        }
+
+    .validation-summary {
+        color: red;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        font-size: 48px;
+        color: #343a40;
+        margin-bottom: 20px;
+    }
+
+    .remember-me {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .forgot-password {
+        text-align: right;
+        display: block;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="container">
+    <div class="login-container">
+        <i class="fas fa-couch logo"></i>
+        <div class="login-header">
+            <h3>Hoşgeldiniz</h3>
+        </div>
+        <form method="post">
+            <label for="UserName">Kullanıcı Adı</label>
+            <input type="text" id="UserName" asp-for="UserName" class="form-control" placeholder="Kullanıcı adınızı girin" />
+
+            <label for="Password">Şifre</label>
+            <input type="password" id="Password" asp-for="Password" class="form-control" placeholder="Şifrenizi girin" />
+
+
+
+            <div class="validation-summary">
+                @Html.ValidationSummary()
+            </div>
+
+            <button type="submit" class="btn btn-custom">Giriş Yap</button>
+
+            <a href="#" class="forgot-password">Şifrenizi mi unuttunuz?</a>
+        </form>
+    </div>
+</div>
